@@ -3,9 +3,13 @@
  * Desc - Created Reservation Exception Class
  */
 
+
+
 package com.hexaware.cc.exception;
+
 public class ReservationException extends Exception {
     public ReservationException(String message) {
         super(message);
     }
 }
+

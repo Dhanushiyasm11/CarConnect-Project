@@ -2,10 +2,13 @@
  * Date - 11-04-2025
  * Desc - Created Vehicle Entity Class
  */
+
+
+
 package com.hexaware.cc.entity;
 
 public class Vehicle {
-    private int vehicleID;
+    private int vehicleId;
     private String model;
     private String make;
     private int year;
@@ -16,9 +19,9 @@ public class Vehicle {
 
     public Vehicle() {}
 
-    public Vehicle(int vehicleID, String model, String make, int year, String color,
+    public Vehicle(int vehicleId, String model, String make, int year, String color,
                    String registrationNumber, boolean availability, double dailyRate) {
-        this.vehicleID = vehicleID;
+        this.vehicleId = vehicleId;
         this.model = model;
         this.make = make;
         this.year = year;
@@ -28,27 +31,68 @@ public class Vehicle {
         this.dailyRate = dailyRate;
     }
 
-    public int getVehicleID() { return vehicleID; }
-    public void setVehicleID(int vehicleID) { this.vehicleID = vehicleID; }
+	public int getVehicleId() {
+		return vehicleId;
+	}
 
-    public String getModel() { return model; }
-    public void setModel(String model) { this.model = model; }
+	public void setVehicleId(int vehicleId) {
+		this.vehicleId = vehicleId;
+	}
 
-    public String getMake() { return make; }
-    public void setMake(String make) { this.make = make; }
+	public String getModel() {
+		return model;
+	}
 
-    public int getYear() { return year; }
-    public void setYear(int year) { this.year = year; }
+	public void setModel(String model) {
+		this.model = model;
+	}
 
-    public String getColor() { return color; }
-    public void setColor(String color) { this.color = color; }
+	public String getMake() {
+		return make;
+	}
 
-    public String getRegistrationNumber() { return registrationNumber; }
-    public void setRegistrationNumber(String registrationNumber) { this.registrationNumber = registrationNumber; }
+	public void setMake(String make) {
+		this.make = make;
+	}
 
-    public boolean isAvailability() { return availability; }
-    public void setAvailability(boolean availability) { this.availability = availability; }
+	public int getYear() {
+		return year;
+	}
 
-    public double getDailyRate() { return dailyRate; }
-    public void setDailyRate(double dailyRate) { this.dailyRate = dailyRate; }
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getRegistrationNumber() {
+		return registrationNumber;
+	}
+
+	public void setRegistrationNumber(String registrationNumber) {
+		this.registrationNumber = registrationNumber;
+	}
+
+	public boolean isAvailability() {
+		return availability;
+	}
+
+	public void setAvailability(boolean availability) {
+		this.availability = availability;
+	}
+
+	public double getDailyRate() {
+		return dailyRate;
+	}
+
+	public void setDailyRate(double dailyRate) {
+		this.dailyRate = dailyRate;
+	}
+
 }
