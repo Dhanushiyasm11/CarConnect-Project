@@ -1,16 +1,18 @@
+//@Author - Akshaya
+
 package com.hexaware.cc.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 public class DBConnUtil {
-    public static Connection getConnection(Properties props) throws SQLException {
-        String url = props.getProperty("url");
-        String user = props.getProperty("user");
-        String password = props.getProperty("password");
 
-        return DriverManager.getConnection(url, user, password);
+    private static final String DB_URL = DBPropertyUtil.getConnectionString("db.properties");
+    private static final String DB_USER = "root"; // Replace with your DB username
+    private static final String DB_PASS = "root"; // Replace with your DB password
+
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
     }
 }
