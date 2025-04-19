@@ -1,3 +1,7 @@
+/*@author - Dhanushiya SM
+ * Date - 11-04-2025
+ * Desc - Created Vehicle Entity Class
+ */
 package com.hexaware.cc.entity;
 
 public class Vehicle {
