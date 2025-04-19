@@ -7,11 +7,14 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class DBPropertyUtil {
-    public static Properties loadProperties(String filename) throws IOException {
+
+    public static String getConnectionString(String propertyFileName) {
         Properties props = new Properties();
-        FileInputStream fis = new FileInputStream(filename);
-        props.load(fis);
-        return props;
+        try (FileInputStream fis = new FileInputStream(propertyFileName)) {
+            props.load(fis);
+            return props.getProperty("db.url");
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to load DB property file.", e);
+        }
     }
 }
-
