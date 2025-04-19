@@ -1,53 +1,50 @@
-/*
- * @author:Akshaya
- * date:11-04-2025
- * desc:created reservation entity class
- * 
- * */
+/*@author - Akshaya
+ * Date - 11-04-2025
+ * Desc - Created Reservation Entity Class
+ */
 
 
 package com.hexaware.cc.entity;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class Reservation {
-    private int reservationId;
-    private int customerId;
-    private int vehicleId;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
+    private int reservationID;
+    private int customerID;
+    private int vehicleID;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private double totalCost;
     private String status;
 
     public Reservation() {}
 
-    public Reservation(int reservationId, int customerId, int vehicleId,
-                       LocalDateTime startDate, LocalDateTime endDate,
+    public Reservation(int reservationID, int customerID, int vehicleID,
+                       LocalDate startDate, LocalDate endDate,
                        double totalCost, String status) {
-        this.reservationId = reservationId;
-        this.customerId = customerId;
-        this.vehicleId = vehicleId;
+        this.reservationID = reservationID;
+        this.customerID = customerID;
+        this.vehicleID = vehicleID;
         this.startDate = startDate;
         this.endDate = endDate;
         this.totalCost = totalCost;
         this.status = status;
     }
 
-    // Getters and Setters
-    public int getReservationId() { return reservationId; }
-    public void setReservationId(int reservationId) { this.reservationId = reservationId; }
+    public int getReservationID() { return reservationID; }
+    public void setReservationID(int reservationID) { this.reservationID = reservationID; }
 
-    public int getCustomerId() { return customerId; }
-    public void setCustomerId(int customerId) { this.customerId = customerId; }
+    public int getCustomerID() { return customerID; }
+    public void setCustomerID(int customerID) { this.customerID = customerID; }
 
-    public int getVehicleId() { return vehicleId; }
-    public void setVehicleId(int vehicleId) { this.vehicleId = vehicleId; }
+    public int getVehicleID() { return vehicleID; }
+    public void setVehicleID(int vehicleID) { this.vehicleID = vehicleID; }
 
-    public LocalDateTime getStartDate() { return startDate; }
-    public void setStartDate(LocalDateTime startDate) { this.startDate = startDate; }
+    public LocalDate getStartDate() { return startDate; }
+    public void setStartDate(LocalDate startDate) { this.startDate = startDate; }
 
-    public LocalDateTime getEndDate() { return endDate; }
-    public void setEndDate(LocalDateTime endDate) { this.endDate = endDate; }
+    public LocalDate getEndDate() { return endDate; }
+    public void setEndDate(LocalDate endDate) { this.endDate = endDate; }
 
     public double getTotalCost() { return totalCost; }
     public void setTotalCost(double totalCost) { this.totalCost = totalCost; }
@@ -55,23 +52,8 @@ public class Reservation {
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
 
-    // Business method
     public void calculateTotalCost(double dailyRate) {
-        long days = java.time.Duration.between(startDate, endDate).toDays();
-        if (days <= 0) days = 1; // Minimum 1 day charge
-        this.totalCost = days * dailyRate;
-    }
-
-    @Override
-    public String toString() {
-        return "Reservation{" +
-               "reservationId=" + reservationId +
-               ", customerId=" + customerId +
-               ", vehicleId=" + vehicleId +
-               ", startDate=" + startDate +
-               ", endDate=" + endDate +
-               ", totalCost=" + totalCost +
-               ", status='" + status + '\'' +
-               '}';
+        long days = java.time.temporal.ChronoUnit.DAYS.between(startDate, endDate);
+        this.totalCost = dailyRate * days;
     }
 }

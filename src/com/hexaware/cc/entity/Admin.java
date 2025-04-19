@@ -1,19 +1,14 @@
-/*
- * @author:Akshaya
- * date:11-04-2025
- * desc:created admin entity class
- * 
- * */
-
-
-
+/*@author - Akshaya
+ * Date - 11-04-2025
+ * Desc - Created Admin Entity Class
+ */
 
 package com.hexaware.cc.entity;
 
 import java.time.LocalDate;
 
 public class Admin {
-    private int adminId;
+    private int adminID;
     private String firstName;
     private String lastName;
     private String email;
@@ -25,10 +20,9 @@ public class Admin {
 
     public Admin() {}
 
-    public Admin(int adminId, String firstName, String lastName, String email,
-                 String phoneNumber, String username, String password,
-                 String role, LocalDate joinDate) {
-        this.adminId = adminId;
+    public Admin(int adminID, String firstName, String lastName, String email, String phoneNumber,
+                 String username, String password, String role, LocalDate joinDate) {
+        this.adminID = adminID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -39,9 +33,8 @@ public class Admin {
         this.joinDate = joinDate;
     }
 
-    // Getters and Setters
-    public int getAdminId() { return adminId; }
-    public void setAdminId(int adminId) { this.adminId = adminId; }
+    public int getAdminID() { return adminID; }
+    public void setAdminID(int adminID) { this.adminID = adminID; }
 
     public String getFirstName() { return firstName; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
@@ -67,19 +60,7 @@ public class Admin {
     public LocalDate getJoinDate() { return joinDate; }
     public void setJoinDate(LocalDate joinDate) { this.joinDate = joinDate; }
 
-    // Business method
     public boolean authenticate(String inputPassword) {
-        return this.password.equals(inputPassword); // Replace with hash check in real use
-    }
-
-    @Override
-    public String toString() {
-        return "Admin{" +
-               "adminId=" + adminId +
-               ", name='" + firstName + ' ' + lastName + '\'' +
-               ", role='" + role + '\'' +
-               ", username='" + username + '\'' +
-               ", email='" + email + '\'' +
-               '}';
+        return this.password.equals(inputPassword);
     }
 }
