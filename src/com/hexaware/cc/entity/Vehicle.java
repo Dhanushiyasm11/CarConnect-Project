@@ -5,71 +5,50 @@
 package com.hexaware.cc.entity;
 
 public class Vehicle {
-    private int vehicleId;
-    private String make;
+    private int vehicleID;
     private String model;
+    private String make;
     private int year;
-    private double pricePerDay;
-    private String status; 
+    private String color;
+    private String registrationNumber;
+    private boolean availability;
+    private double dailyRate;
 
-    
-    public Vehicle(int vehicleId, String make, String model, int year, double pricePerDay, String status) {
-        this.vehicleId = vehicleId;
-        this.make = make;
+    public Vehicle() {}
+
+    public Vehicle(int vehicleID, String model, String make, int year, String color,
+                   String registrationNumber, boolean availability, double dailyRate) {
+        this.vehicleID = vehicleID;
         this.model = model;
-        this.year = year;
-        this.pricePerDay = pricePerDay;
-        this.status = status;
-    }
-
- 
-    public int getVehicleId() {
-        return vehicleId;
-    }
-
-    public void setVehicleId(int vehicleId) {
-        this.vehicleId = vehicleId;
-    }
-
-    public String getMake() {
-        return make;
-    }
-
-    public void setMake(String make) {
         this.make = make;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
         this.year = year;
+        this.color = color;
+        this.registrationNumber = registrationNumber;
+        this.availability = availability;
+        this.dailyRate = dailyRate;
     }
 
-    public double getPricePerDay() {
-        return pricePerDay;
-    }
+    public int getVehicleID() { return vehicleID; }
+    public void setVehicleID(int vehicleID) { this.vehicleID = vehicleID; }
 
-    public void setPricePerDay(double pricePerDay) {
-        this.pricePerDay = pricePerDay;
-    }
+    public String getModel() { return model; }
+    public void setModel(String model) { this.model = model; }
 
-    public String getStatus() {
-        return status;
-    }
+    public String getMake() { return make; }
+    public void setMake(String make) { this.make = make; }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    public int getYear() { return year; }
+    public void setYear(int year) { this.year = year; }
 
- 
+    public String getColor() { return color; }
+    public void setColor(String color) { this.color = color; }
+
+    public String getRegistrationNumber() { return registrationNumber; }
+    public void setRegistrationNumber(String registrationNumber) { this.registrationNumber = registrationNumber; }
+
+    public boolean isAvailability() { return availability; }
+    public void setAvailability(boolean availability) { this.availability = availability; }
+
+    public double getDailyRate() { return dailyRate; }
+    public void setDailyRate(double dailyRate) { this.dailyRate = dailyRate; }
 }
