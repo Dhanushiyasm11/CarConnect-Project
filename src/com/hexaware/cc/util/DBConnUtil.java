@@ -8,11 +8,15 @@ import java.sql.SQLException;
 
 public class DBConnUtil {
 
-    private static final String DB_URL = DBPropertyUtil.getConnectionString("db.properties");
-    private static final String DB_USER = "root"; 
-    private static final String DB_PASS = "Dhanushiya@dhanu"; 
-
-    public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+   
+    public static Connection getConnection(String connectionString) {
+        Connection conn = null;
+        try {
+           
+            conn = DriverManager.getConnection(connectionString);
+        } catch (SQLException e) {
+            e.printStackTrace();  
+        }
+        return conn;
     }
 }

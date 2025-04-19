@@ -1,14 +1,11 @@
-/*@author - Akshaya
- * Date - 11-04-2025
- * Desc - Created Admin Entity Class
- */
+/*@author - Akshaya*/
 
 package com.hexaware.cc.entity;
 
 import java.time.LocalDate;
 
 public class Admin {
-    private int adminID;
+    private int adminId;
     private String firstName;
     private String lastName;
     private String email;
@@ -20,9 +17,10 @@ public class Admin {
 
     public Admin() {}
 
-    public Admin(int adminID, String firstName, String lastName, String email, String phoneNumber,
-                 String username, String password, String role, LocalDate joinDate) {
-        this.adminID = adminID;
+    public Admin(int adminId, String firstName, String lastName, String email,
+                 String phoneNumber, String username, String password,
+                 String role, LocalDate joinDate) {
+        this.adminId = adminId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -33,34 +31,82 @@ public class Admin {
         this.joinDate = joinDate;
     }
 
-    public int getAdminID() { return adminID; }
-    public void setAdminID(int adminID) { this.adminID = adminID; }
+	public int getAdminId() {
+		return adminId;
+	}
 
-    public String getFirstName() { return firstName; }
-    public void setFirstName(String firstName) { this.firstName = firstName; }
+	public void setAdminId(int adminId) {
+		this.adminId = adminId;
+	}
 
-    public String getLastName() { return lastName; }
-    public void setLastName(String lastName) { this.lastName = lastName; }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public String getPhoneNumber() { return phoneNumber; }
-    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+	public String getLastName() {
+		return lastName;
+	}
 
-    public String getUsername() { return username; }
-    public void setUsername(String username) { this.username = username; }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-    public String getPassword() { return password; }
-    public void setPassword(String password) { this.password = password; }
+	public String getEmail() {
+		return email;
+	}
 
-    public String getRole() { return role; }
-    public void setRole(String role) { this.role = role; }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public LocalDate getJoinDate() { return joinDate; }
-    public void setJoinDate(LocalDate joinDate) { this.joinDate = joinDate; }
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
 
-    public boolean authenticate(String inputPassword) {
-        return this.password.equals(inputPassword);
-    }
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public LocalDate getJoinDate() {
+		return joinDate;
+	}
+
+	public void setJoinDate(LocalDate joinDate) {
+		this.joinDate = joinDate;
+	}
+
+	public boolean authenticate(String password2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
 }
