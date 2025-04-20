@@ -49,8 +49,8 @@ public class ReservationDao implements IReservationDao {
     public void createReservation(Reservation r) {
         try {
             PreparedStatement ps = conn.prepareStatement("INSERT INTO Reservation (CustomerID, VehicleID, StartDate, EndDate, TotalCost, Status) VALUES (?, ?, ?, ?, ?, ?)");
-            ps.setInt(1, r.getCustomerID());
-            ps.setInt(2, r.getVehicleID());
+            ps.setInt(1, r.getCustomerId());
+            ps.setInt(2, r.getVehicleId());
             ps.setTimestamp(3, Timestamp.valueOf(r.getStartDate()));
             ps.setTimestamp(4, Timestamp.valueOf(r.getEndDate()));
             ps.setDouble(5, r.getTotalCost());
@@ -87,9 +87,9 @@ public class ReservationDao implements IReservationDao {
 
     private Reservation mapRow(ResultSet rs) throws SQLException {
         Reservation r = new Reservation();
-        r.setReservationID(rs.getInt("ReservationID"));
-        r.setCustomerID(rs.getInt("CustomerID"));
-        r.setVehicleID(rs.getInt("VehicleID"));
+        r.setReservationId(rs.getInt("ReservationID"));
+        r.setCustomerId(rs.getInt("CustomerID"));
+        r.setVehicleId(rs.getInt("VehicleID"));
         r.setStartDate(rs.getTimestamp("StartDate").toLocalDateTime());
         r.setEndDate(rs.getTimestamp("EndDate").toLocalDateTime());
         r.setTotalCost(rs.getDouble("TotalCost"));
