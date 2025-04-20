@@ -2,7 +2,7 @@
 
 package com.hexaware.cc.test;
 
-import com.hexaware.cc.entity.Customer; 
+import com.hexaware.cc.entity.Customer;  
 import com.hexaware.cc.entity.Vehicle;
 import com.hexaware.cc.service.CustomerService;
 import com.hexaware.cc.service.VehicleService;
@@ -31,18 +31,18 @@ public class CarConnectTests {
         // Ensure this ID exists in DB before testing
         Customer customer = new Customer();
         customer.setCustomerId(1);
-        customer.setFirstName("Updated Name");
-        customer.setEmail("updated.email@example.com");
+        customer.setFirstName("harish");
+        customer.setEmail("harish.email@example.com");
         customer.setPhoneNumber("9876543210");
-        customer.setPassword("updatedpass");
+        customer.setPassword("harishpass");
 
         try {
             service.updateCustomer(customer);
             Customer updated = service.getCustomerById(1);
 
             assertNotNull(updated);
-            assertEquals("Updated Name", updated.getFirstName());
-            assertEquals("updated.email@example.com", updated.getEmail());
+            assertEquals("harish", updated.getFirstName());
+            assertEquals("harish.email@example.com", updated.getEmail());
         } catch (Exception e) {
             e.printStackTrace();
             fail("Customer update failed due to exception: " + e.getMessage());
