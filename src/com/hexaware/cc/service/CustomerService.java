@@ -7,7 +7,15 @@ import java.util.List;
 public class CustomerService implements ICustomerService {
     private CustomerDao dao = new CustomerDao();
 
-    public Customer getCustomerById(int id) {
+    public CustomerService(Object object) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public CustomerService() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Customer getCustomerById(int id) {
         return dao.getCustomerById(id);
     }
 
@@ -30,4 +38,9 @@ public class CustomerService implements ICustomerService {
     public List<Customer> getAllCustomers() {
         return dao.getAllCustomers();
     }
+
+	public Customer authenticate(String string, String string2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

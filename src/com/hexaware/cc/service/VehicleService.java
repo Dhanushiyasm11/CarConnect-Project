@@ -10,7 +10,15 @@ import java.util.List;
 public class VehicleService implements IVehicleService {
     private VehicleDao dao = new VehicleDao();
 
-    public Vehicle getVehicleById(int id) {
+    public VehicleService(Object object) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public VehicleService() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Vehicle getVehicleById(int id) {
         return dao.getVehicleById(id);
     }
 
