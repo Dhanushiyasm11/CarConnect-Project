@@ -27,7 +27,7 @@ public class VehicleDao implements IVehicleDao {
             if (rs.next()) {
                 v = mapRow(rs);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return v;
@@ -41,7 +41,7 @@ public class VehicleDao implements IVehicleDao {
             while (rs.next()) {
                 list.add(mapRow(rs));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return list;
@@ -49,7 +49,8 @@ public class VehicleDao implements IVehicleDao {
 
     public void addVehicle(Vehicle v) {
         try {
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO Vehicle (Model, Make, Year, Color, RegistrationNumber, Availability, DailyRate) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement ps = conn.prepareStatement(
+                "INSERT INTO Vehicle (Model, Make, Year, Color, RegistrationNumber, Availability, DailyRate) VALUES (?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, v.getModel());
             ps.setString(2, v.getMake());
             ps.setInt(3, v.getYear());
@@ -58,14 +59,17 @@ public class VehicleDao implements IVehicleDao {
             ps.setBoolean(6, v.isAvailability());
             ps.setDouble(7, v.getDailyRate());
             ps.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLIntegrityConstraintViolationException e) {
+            System.out.println("Duplicate Registration Number: " + v.getRegistrationNumber());
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     public void updateVehicle(Vehicle v) {
         try {
-            PreparedStatement ps = conn.prepareStatement("UPDATE Vehicle SET Model=?, Make=?, Year=?, Color=?, RegistrationNumber=?, Availability=?, DailyRate=? WHERE VehicleID=?");
+            PreparedStatement ps = conn.prepareStatement(
+                "UPDATE Vehicle SET Model=?, Make=?, Year=?, Color=?, RegistrationNumber=?, Availability=?, DailyRate=? WHERE VehicleID=?");
             ps.setString(1, v.getModel());
             ps.setString(2, v.getMake());
             ps.setInt(3, v.getYear());
@@ -75,7 +79,9 @@ public class VehicleDao implements IVehicleDao {
             ps.setDouble(7, v.getDailyRate());
             ps.setInt(8, v.getVehicleId());
             ps.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLIntegrityConstraintViolationException e) {
+            System.out.println("Update failed: Duplicate Registration Number " + v.getRegistrationNumber());
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -85,7 +91,7 @@ public class VehicleDao implements IVehicleDao {
             PreparedStatement ps = conn.prepareStatement("DELETE FROM Vehicle WHERE VehicleID=?");
             ps.setInt(1, vehicleId);
             ps.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -98,7 +104,7 @@ public class VehicleDao implements IVehicleDao {
             while (rs.next()) {
                 list.add(mapRow(rs));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return list;
