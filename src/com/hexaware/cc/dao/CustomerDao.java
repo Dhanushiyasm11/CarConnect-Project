@@ -2,7 +2,7 @@
 
 package com.hexaware.cc.dao;
 
-import com.hexaware.cc.entity.Customer;
+import com.hexaware.cc.entity.Customer; 
 import com.hexaware.cc.util.DBConnUtil;
 import com.hexaware.cc.util.DBPropertyUtil;
 

@@ -1,46 +1,23 @@
-<<<<<<< HEAD
-/*@author - Akshaya
- * date- 11-04-2025
- * desc- created reservation class
- * 
- * */
-=======
-/*@author - Akshaya*/
->>>>>>> dhanushiya-dev
-
+//@Author - Akshaya S
 
 package com.hexaware.cc.entity;
 
-<<<<<<< HEAD
-import java.util.Date;
-=======
 import java.time.LocalDateTime;
->>>>>>> dhanushiya-dev
 
 public class Reservation {
     private int reservationId;
     private int customerId;
     private int vehicleId;
-<<<<<<< HEAD
-    private Date startDate;
-    private Date endDate;
-=======
     private LocalDateTime startDate;
     private LocalDateTime endDate;
->>>>>>> dhanushiya-dev
     private double totalCost;
     private String status;
 
     public Reservation() {}
 
-<<<<<<< HEAD
-    public Reservation(int reservationId, int customerId, int vehicleId, Date startDate,
-                       Date endDate, double totalCost, String status) {
-=======
     public Reservation(int reservationId, int customerId, int vehicleId,
                        LocalDateTime startDate, LocalDateTime endDate,
                        double totalCost, String status) {
->>>>>>> dhanushiya-dev
         this.reservationId = reservationId;
         this.customerId = customerId;
         this.vehicleId = vehicleId;
@@ -50,15 +27,6 @@ public class Reservation {
         this.status = status;
     }
 
-<<<<<<< HEAD
-    // Getters and Setters
-
-    public double calculateTotalCost(double dailyRate) {
-        long days = (endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24);
-        return days * dailyRate;
-    }
-}
-=======
 	public int getReservationId() {
 		return reservationId;
 	}
@@ -119,4 +87,3 @@ public class Reservation {
 
    
 }
->>>>>>> dhanushiya-dev

@@ -1,20 +1,9 @@
-<<<<<<< HEAD
-/*@author - Akshaya
- * date- 11-04-2025
- * desc- created reservation class
- * 
- * */
+//@Author - Akshaya S
 
-package com.hexaware.cc.entity;
-
-import java.util.Date;
-=======
-/*@author - Akshaya*/
 
 package com.hexaware.cc.entity;
 
 import java.time.LocalDate;
->>>>>>> dhanushiya-dev
 
 public class Admin {
     private int adminId;
@@ -25,21 +14,13 @@ public class Admin {
     private String username;
     private String password;
     private String role;
-<<<<<<< HEAD
-    private Date joinDate;
-=======
     private LocalDate joinDate;
->>>>>>> dhanushiya-dev
 
     public Admin() {}
 
     public Admin(int adminId, String firstName, String lastName, String email,
                  String phoneNumber, String username, String password,
-<<<<<<< HEAD
-                 String role, Date joinDate) {
-=======
                  String role, LocalDate joinDate) {
->>>>>>> dhanushiya-dev
         this.adminId = adminId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -51,14 +32,6 @@ public class Admin {
         this.joinDate = joinDate;
     }
 
-<<<<<<< HEAD
-    // Getters and Setters
-
-    public boolean authenticate(String inputPassword) {
-        return this.password.equals(inputPassword);
-    }
-}
-=======
 	public int getAdminId() {
 		return adminId;
 	}
@@ -138,4 +111,3 @@ public class Admin {
 
 
 }
->>>>>>> dhanushiya-dev
