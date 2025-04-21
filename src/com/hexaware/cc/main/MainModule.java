@@ -49,7 +49,7 @@ public class MainModule {
     static void customerRegister() {
         System.out.println("=== Customer Registration ===");
         Customer c = new Customer();
-        sc.nextLine(); // clear buffer
+        sc.nextLine(); 
         System.out.print("First Name: ");
         c.setFirstName(sc.nextLine());
         System.out.print("Last Name: ");
